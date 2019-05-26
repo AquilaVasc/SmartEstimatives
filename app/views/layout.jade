@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='stylesheets/reset.css')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
+  body
+    nav.navbar.navbar-light.d-flex(style="background-color: #e9ecef;")
+      a.navbar-brand.mr-auto(href="/") 
+        img(src="images/logo.png", style="height: 60px;")
+      ul.nav.mt-2.mt-lg-0
+        li.nav-item.active
+          a.nav-link(href="/") Home
+            span.sr-only (current)
+        li.nav-item.active
+          a.nav-link(href="/createTask") Create Task
+        li.nav-item.active
+          a.nav-link(href="/createTag") Create Tag
+        if !user.loggedIn  
+          li.nav-item
+            a.nav-link(href="/", data-toggle="modal", data-target="#loginModal") Login
+          li.nav-item
+            a.nav-link(href="/", data-toggle="modal", data-target="#singUpModal") Sing Up
+        else
+          li.nav-item
+            a.nav-link(href="/myTasks") MyTasks
+    if !user.loggedIn
+      include loginModal
+      include singUpModal
+
+    block content
+
+    .container 
+      block content
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js", integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", crossorigin="anonymous")
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    script(src="/__/firebase/6.0.4/firebase-app.js")
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#reserved-urls -->
+    <!-- Initialize Firebase -->
+    script(src="/__/firebase/init.js")
+    script(src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js")

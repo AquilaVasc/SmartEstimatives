@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Create a Tag
+    form(name="login-form", method="post")
+        .form-group
+            label(for="task-title") Tag title
+            input.form-control#task-title(type="text", aria-describedby="Put the title here", placeholder="Enter Title")
+        .form-group
+            label(for="task-description") Describe your tag and justify whats is the average time to complete something involving at least that tag basically
+            textarea.form-control#task-description(placeholder="Describe your tag")
+        .form-group
+            label(for="task-title") Pick the classification you think we should give for one task that has only that tag
+            p.slidecontainer
+                input.slider#id1(type="range", min="1", max="21")
+        .form-group
+            button.btn.btn-primary.btn-lg.btn-block(type="submit") Submit

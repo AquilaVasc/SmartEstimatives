@@ -1,0 +1,19 @@
+{
+  "name": "smart-estimative",
+  "description": "Smart Estimatives API",
+  "version": "1.0.0",
+  "private": true,
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "algorithmia": "^0.3.10",
+    "consign": "^0.1.6",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.17.0",
+    "jade": "~1.11.0",
+    "mongoose": "^4.13.18"
+  }
+}

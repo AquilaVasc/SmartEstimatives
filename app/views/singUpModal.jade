@@ -1,0 +1,22 @@
+.modal.fade#singUpModal(tabindex="-1", role="dialog", aria-labelledby="singUpModalLabel", aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                h5.modal-title#singUpModalLabel Sing Up
+                button(type="button", class="close", data-dismiss="modal", aria-label="Close")
+                    span(aria-hidden="true") &times;
+            .modal-body
+                form(name="sing-up-form", method="post")
+                    .form-group
+                        label(for="sing-up-email") Email address
+                        input(type="email", class="form-control", id="sing-up-email", aria-describedby="emailHelp", placeholder="Enter email")
+                    .form-group
+                        label(for="sing-up-pass") Password
+                        input(type="password", class="form-control", id="sing-up-pass",placeholder="Password")
+                    .form-group
+                        label(for="sing-bio") One line bio
+                        input(type="email", class="form-control", id="sing-bio", aria-describedby="bioHelp", placeholder="Enter one line bio")
+                    input( type="submit", id="submit-form-singup", class="hidden")
+            .modal-footer
+                label.btn.btn-primary(for="submit-form-singup", style="margin-bottom: 0;") Sing Up
+                button.btn.btn-secondary(type="button", data-dismiss="modal") Close

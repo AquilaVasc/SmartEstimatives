@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 Create a Task
+    form(name="login-form", method="post")
+        .form-group
+            label(for="task-title") Task title
+            input.form-control#task-title(type="text", aria-describedby="Put the title here", placeholder="Enter Title")
+        .form-group
+            label(for="task-description") Describe your task the best possible
+            textarea.form-control#task-description(placeholder="Describe your task")
+        .form-group
+            button.btn.btn-primary.btn-lg.btn-block(type="submit") Submit
